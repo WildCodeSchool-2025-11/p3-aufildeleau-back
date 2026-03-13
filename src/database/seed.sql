@@ -3,9 +3,5 @@ INSERT INTO items (title) VALUES
   ('Deuxième item'),
   ('Troisième item');
 
-
-
-INSERT INTO user (name,adress) VALUES
-  ('name1','adress1'),
-  ('name2','adress2'),
-  ('name3','adress3');
+INSERT INTO users (login,password) VALUES
+  ('yavuz','yavuz');
