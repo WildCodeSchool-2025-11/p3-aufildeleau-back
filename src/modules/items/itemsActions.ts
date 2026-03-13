@@ -40,11 +40,10 @@ export const create: RequestHandler = async (req, res, next) => {
 
 // PUT /api/items/:id
 export const update: RequestHandler = async (req, res, next) => {
-
 	try {
 		const { title } = req.body;
 
-		console.log('title',title);
+		console.log("title", title);
 		const updated = await itemsRepository.update(String(req.params.id), title);
 
 		if (!updated) {
@@ -52,7 +51,7 @@ export const update: RequestHandler = async (req, res, next) => {
 			return;
 		}
 
-		res.json({message : 'donnée mise à jour'});
+		res.json({ message: "donnée mise à jour" });
 	} catch (err) {
 		next(err);
 	}
@@ -68,7 +67,7 @@ export const destroy: RequestHandler = async (req, res, next) => {
 			return;
 		}
 
-		res.json({message : 'donnée supprimé'});
+		res.json({ message: "donnée supprimé" });
 	} catch (err) {
 		next(err);
 	}
