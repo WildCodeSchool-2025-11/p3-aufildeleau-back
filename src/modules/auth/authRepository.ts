@@ -16,3 +16,14 @@ export const signup = async (login: string, password: string) => {
 	);
 	return result.insertId;
 };
+
+export const loginExist = async (login: string) => {
+	const [rows] = await client.query<RowDataPacket[]>(
+		"SELECT * FROM users WHERE login = ?",
+		[login],
+	);
+
+	return rows[0] as RowDataPacket | undefined;
+};
+
+
